@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+    </style>
+</head>
+<body>
+<div class="row">
+  <div class="column" >
+<table class="table table-dark" style="width:200%" >
+    <tr>
+    <th> Movie_Name </th> <th> Overview </th> <th> Rating </th> <th> Image  </th> <th> Jenre  </th> <th> Language  </th>
+    </tr>
+    <tr>
+    </tr>
+        {% for l in movie_list %}
+    <tr>
+        <td> {{ l[0] }} </td> <td> {{ l[1] }}  </td> <td> {{ l[2] }} </td> <td> <img src=" {{ l[3] }} " width="100" height="100"> </td> <td> {{ selected_jenre }} </td> <td> {{ selected_language}} </td>
+    </tr>
+        {% endfor %}
+        </tr>
+
+</table>
+</div>
+  <div class="column">
+  </div>
+</div>
+</body>
+<h1><a href="/">return home</a> </h1>
+</html>
